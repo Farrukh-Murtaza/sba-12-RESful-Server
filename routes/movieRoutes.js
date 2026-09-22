@@ -1,13 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const {searchMovies, getMovieById} = require("../controllers/movieController")
 
-
-router.get('/', (req, res) => {
-  res.send('GET request to the movies')
-});
-
-router.post('/', (req,res) => {
-    res.send('POST request to the movies')
-})
+router.get('/search', searchMovies);
+router.get("/movies/:id", getMovieById);
 
 module.exports = router;
